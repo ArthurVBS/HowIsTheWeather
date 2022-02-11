@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <title>Como está o Clima?</title>
+</head>
+<body>
+    <header>
+        <h1 class="title">Como está o <span>Clima</span>?</h1>
+        <div class="search">
+            <input type="text" placeholder="Insira o nome da cidade">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1 class="city">Cidade, País</h1>
+            <h3 class="date">Data</h3>
+
+            <div class="imgBox">
+                <img class="weather_icon" src="images/unknown.png" alt="Ícone do clima">
+            </div>
+            <p class="description">Descrição do clima</p>
+            <h2 class="temp">Temperatura°</h2>
+
+            <div class="low_highBox">
+                <i class="fas fa-temperature-low"></i>
+                <p class="temp-low">Mínima°</p>
+                <p>/</p>
+                <i class="fas fa-temperature-high"></i>
+                <p class="temp-high">Máxima°</p>
+            </div>
+
+            <div class="humidityBox">
+                <i class="fas fa-tint"></i>
+                <p class="humidity">Umidade%</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Made with ♡ by <a href="">Arthur V.B.S.</a></p>
+    </footer>
+    <script src="scripts/index.js"></script>
+</body>
+</html>
