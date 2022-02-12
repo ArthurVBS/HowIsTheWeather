@@ -134,7 +134,7 @@ main > .container
     box-shadow: 4px 8px 4px #00000020;
 }
 
-main > .container > .city
+main > .container > .local
 {
     text-align: center;
 }
@@ -154,14 +154,22 @@ main > .container > .imgBox
 
 main > .container > .description
 {
+    letter-spacing: 1px;
+    font-weight: 400;
+    font-size: 1.1em;
     text-align: center;
+    text-transform: capitalize;
 }
 
 main > .container > .temp
 {
     color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 2em;
     text-shadow: 2px 2px #00000020;
+    gap: 8px;
     padding: 16px;
 }
 

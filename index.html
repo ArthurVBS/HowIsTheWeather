@@ -13,33 +13,38 @@
     <header>
         <h1 class="title">Como está o <span>Clima</span>?</h1>
         <div class="search">
-            <input type="text" placeholder="Insira o nome da cidade">
-            <button><i class="fas fa-search"></i></button>
+            <input class="searchInput" type="text" placeholder="Insira o nome da cidade">
+            <button class="searchButton"><i class="fas fa-search"></i></button>
         </div>
     </header>
 
     <main>
         <div class="container">
-            <h1 class="city">Cidade, País</h1>
+            <h1 class="local">Cidade, País</h1>
             <h3 class="date">Data</h3>
 
             <div class="imgBox">
-                <img class="weather_icon" src="images/unknown.png" alt="Ícone do clima">
+                <img class="weather_icon" src="images/icons/unknown.png" alt="Ícone do clima">
             </div>
             <p class="description">Descrição do clima</p>
-            <h2 class="temp">Temperatura°</h2>
+            <div class="temp">
+                <h2 class="temp-now">Temp</h2>
+                <h2 class="temp-unit">°C</h2>
+            </div>
 
             <div class="low_highBox">
                 <i class="fas fa-temperature-low"></i>
-                <p class="temp-low">Mínima°</p>
+                <p class="temp-low">Mínima</p>
+                <p class="temp-unit">°C</p>
                 <p>/</p>
                 <i class="fas fa-temperature-high"></i>
-                <p class="temp-high">Máxima°</p>
+                <p class="temp-high">Máxima</p>
+                <p class="temp-unit">°C</p>
             </div>
 
             <div class="humidityBox">
                 <i class="fas fa-tint"></i>
-                <p class="humidity">Umidade%</p>
+                <p class="humidity">Umidade %</p>
             </div>
         </div>
     </main>
