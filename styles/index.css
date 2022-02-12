@@ -30,9 +30,15 @@ body
 {
     background-color: wheat;
     background-image: url('../images/bg-cloud.jpg');
+
     /*bg-rain: Foto de Kaique Rocha no Pexels*/
     /*bg-sunny: Foto de Josh Sorenson no Pexels*/
     /*bg-cloud: Foto de Rachel Claire no Pexels*/
+    /*bg-fog: Foto de Роман Микрюков no Pexels*/
+    /*bg-evening: Foto de Reynaldo #brigworkz Brigantty no Pexels*/
+    /*bg-snowing: Foto de Simon Berger no Pexels*/
+    /*bg-lightning: Foto de Nikolett Emmert no Pexels*/
+    
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -117,6 +123,7 @@ header > .search > button:hover
 main
 {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 16px;
@@ -264,6 +271,31 @@ main > .container > .radioBox > div > input[type="radio"]:checked ~ label
     box-shadow: inset 0px 0px 4px var(--blackGlass);
 }
 
+main > .bg-author
+{
+    background-color: var(--blackGlass);
+    min-width: 280px;
+    text-align: center;
+    font-style: italic;
+    font-size: 0.7em;
+    font-weight: 700;
+    outline-offset: 1px;
+    outline: 1px solid var(--blue);
+    border-radius: 15px;
+    padding: 8px;
+    margin-top: 16px;
+}
+
+main > .bg-author > a
+{
+    color: white;
+    transition: all 0.5s;
+}
+
+main > .bg-author > a:hover
+{
+    color: var(--blue);
+}
 
 footer
 {
