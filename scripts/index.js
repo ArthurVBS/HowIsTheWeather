@@ -101,37 +101,37 @@ function weatherImage(weather)
     
     if (iconName == '01d' || iconName == '02d')
     {
-        document.body.style.backgroundImage = 'url(../images/bg-sunny.jpg)'
+        document.body.style.backgroundImage = 'url(./images/bg-sunny.jpg)'
         author.innerHTML = `<a href="https://www.pexels.com/pt-br/foto/veiculo-na-estrada-durante-o-por-do-sol-59516/" target="_blank" rel="external">Foto de Josh Sorenson no Pexels</a>`
     }
     else if (iconName == '01n' || iconName == '02n')
     {
-        document.body.style.backgroundImage = 'url(../images/bg-evening.jpg)'
+        document.body.style.backgroundImage = 'url(./images/bg-evening.jpg)'
         author.innerHTML = `<a href="https://www.pexels.com/pt-br/foto/fotografia-de-lampadas-de-rua-ligadas-ao-lado-da-baia-durante-a-noite-771883/" target="_blank" rel="external">Foto de Reynaldo Brigantty no Pexels</a>`
     }
     else if (iconName == '03d' || iconName == '03n' || iconName == '04d' || iconName == '04n')
     {
-        document.body.style.backgroundImage = 'url(../images/bg-cloud.jpg)'
+        document.body.style.backgroundImage = 'url(./images/bg-cloud.jpg)'
         author.innerHTML = `<a href="https://www.pexels.com/pt-br/foto/praia-litoral-calcadao-ceu-nublado-6762037/" target="_blank" rel="external">Foto de Rachel Claire no Pexels</a>`
     }
     else if (iconName == '09d' || iconName == '09n' || iconName == '10d' || iconName == '11n')
     {
-        document.body.style.backgroundImage = 'url(../images/bg-rain.jpg)'
+        document.body.style.backgroundImage = 'url(./images/bg-rain.jpg)'
         author.innerHTML = `<a href="https://www.pexels.com/pt-br/foto/agua-de-orvalho-em-painel-de-vidro-transparente-125510/" target="_blank" rel="external">Foto de Kaique Rocha no Pexels</a>`
     }
     else if (iconName == '11d' || iconName == '11n')
     {
-        document.body.style.backgroundImage = 'url(../images/bg-lightning.jpg)'
+        document.body.style.backgroundImage = 'url(./images/bg-lightning.jpg)'
         author.innerHTML = `<a href="https://www.pexels.com/pt-br/foto/clima-nuvens-ceu-nublado-perigoso-9563370/" target="_blank" rel="external">Foto de Nikolett Emmert no Pexels</a>`
     }
     else if (iconName == '13d' || iconName == '13n')
     {
-        document.body.style.backgroundImage = 'url(../images/bg-snowing.jpg)'
+        document.body.style.backgroundImage = 'url(./images/bg-snowing.jpg)'
         author.innerHTML = `<a href="https://www.pexels.com/pt-br/foto/foto-de-snowy-field-3462588/" target="_blank" rel="external">Foto de Simon Berger no Pexels</a>`
     }
     else if (iconName == '50d' || iconName == '50n')
     {
-        document.body.style.backgroundImage = 'url(../images/bg-fog.jpg)'
+        document.body.style.backgroundImage = 'url(./images/bg-fog.jpg)'
         author.innerHTML = `<a href="https://www.pexels.com/pt-br/foto/nebuloso-enevoado-floresta-selva-8647910/" target="_blank" rel="external">Foto de Роман Микрюков no Pexels</a>`
     }
 }
