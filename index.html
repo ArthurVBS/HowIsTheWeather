@@ -20,31 +20,42 @@
 
     <main>
         <div class="container">
-            <h1 class="local">Cidade, País</h1>
-            <h3 class="date">Data</h3>
+            <h1 class="local">Lugar algum</h1>
+            <h3 class="date">Tempo nenhum</h3>
 
             <div class="imgBox">
                 <img class="weather_icon" src="images/icons/unknown.png" alt="Ícone do clima">
             </div>
-            <p class="description">Descrição do clima</p>
+            <p class="description">Desconhecido</p>
             <div class="temp">
-                <h2 class="temp-now">Temp</h2>
+                <h2 class="temp-now">15</h2>
                 <h2 class="temp-unit">°C</h2>
             </div>
 
             <div class="low_highBox">
                 <i class="fas fa-temperature-low"></i>
-                <p class="temp-low">Mínima</p>
+                <p class="temp-low">10</p>
                 <p class="temp-unit">°C</p>
                 <p>/</p>
                 <i class="fas fa-temperature-high"></i>
-                <p class="temp-high">Máxima</p>
+                <p class="temp-high">20</p>
                 <p class="temp-unit">°C</p>
             </div>
 
             <div class="humidityBox">
                 <i class="fas fa-tint"></i>
-                <p class="humidity">Umidade %</p>
+                <p class="humidity">50%</p>
+            </div>
+
+            <div class="radioBox">
+                <div>
+                    <input type="radio" name="units" id="imperial">
+                    <label for="imperial">°F</label>
+                </div>
+                <div>
+                    <input type="radio" name="units" id="metric" checked="checked">
+                    <label for="metric">°C</label>
+                </div>
             </div>
         </div>
     </main>
