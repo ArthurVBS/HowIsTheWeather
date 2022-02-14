@@ -17,7 +17,7 @@
 
 ## 💻 Situação do projeto:
 
-- Projeto em andamento... 🚧🧭
+- Projeto finalizado ✔️
 
 ## 🛠 Tecnologias:
 
@@ -27,9 +27,10 @@
 
 ## 📝 Features:
 
-- [ ] Ser responsivo (CSS)
-- [ ] Usar tags semânticas (HTML)
-- [ ] Consumir uma API (JS)
+- [x] Ser responsivo (CSS)
+- [x] Usar tags semânticas (HTML)
+- [x] Consumir uma API (JS)
+- [x] Utilizar Geolocalização (JS)
 
 ## ⚙️ Pré-requisitos:
 
