@@ -7,7 +7,8 @@ const api = {
 
 const search = {
     input: document.querySelector('.searchInput'),
-    button: document.querySelector('.searchButton')
+    button: document.querySelector('.searchButton'),
+    geolocation: document.querySelector('.geolocationButton')
 }
 
 const info = {
@@ -30,14 +31,53 @@ const unit = {
     unitImperial: document.getElementById('imperial')
 }
 
-unit.unitMetric.addEventListener('click', changeFahrenheitToCelsius)
-unit.unitImperial.addEventListener('click', changeCelsiusToFahrenheit)
+unit.unitMetric.addEventListener('click', () => {
+    unit.unitMetric.checked ? api.units = 'metric' : api.units = 'imperial'
+    
+    if (temp.tempUnit.outerText == '°F')
+    {
+        temp.tempUnit.innerHTML = '°C'
+        temp.tempNow.innerHTML = calcFahrenheitToCelsius(temp.tempNow.outerText)
+        temp.tempLow.innerHTML = calcFahrenheitToCelsius(temp.tempLow.outerText)
+        temp.tempHigh.innerHTML = calcFahrenheitToCelsius(temp.tempHigh.outerText)
+    }
+})
 
-search.button.addEventListener('click', function() {
+unit.unitImperial.addEventListener('click', () => {
+    unit.unitMetric.checked ? api.units = 'metric' : api.units = 'imperial'
+
+    if (temp.tempUnit.outerText == '°C')
+    {
+        temp.tempUnit.innerHTML = '°F'
+        temp.tempNow.innerHTML = calcCelsiusToFahrenheit(temp.tempNow.outerText)
+        temp.tempLow.innerHTML = calcCelsiusToFahrenheit(temp.tempLow.outerText)
+        temp.tempHigh.innerHTML = calcCelsiusToFahrenheit(temp.tempHigh.outerText)
+    }
+})
+
+search.geolocation.addEventListener('click', () => {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(setPosition, showError);
+    }
+    else {
+        alert('Seu navegador não suporta a geolocalização');
+    }
+    function setPosition(position) {
+        console.log(position)
+        let lat = position.coords.latitude;
+        let long = position.coords.longitude;
+        coordResults(lat, long);
+    }
+    function showError(error) {
+        alert(`erro: ${error.message}`);
+    }
+})
+
+search.button.addEventListener('click', () => {
     searchResults(search.input.value)
 })
 
-search.input.addEventListener('keypress', function(event) {
+search.input.addEventListener('keypress', (event) => {
     key = event.keyCode
     if (key === 13) {
         searchResults(search.input.value)
@@ -58,6 +98,22 @@ function searchResults(city) {
         .then(response => {
             displayResults(response)
         })
+}
+
+function coordResults(lat, long) {
+    fetch(`${api.base}weather?lat=${lat}&lon=${long}&lang=${api.lang}&units=${api.units}&APPID=${api.key}`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`http error: status ${response.status}`)
+            }
+            return response.json();
+        })
+        .catch(error => {
+            alert(error.message)
+        })
+        .then(response => {
+            displayResults(response)
+        });
 }
 
 function displayResults(weather) {
@@ -114,7 +170,7 @@ function weatherImage(weather)
         document.body.style.backgroundImage = 'url(./images/bg-cloud.jpg)'
         author.innerHTML = `<a href="https://www.pexels.com/pt-br/foto/praia-litoral-calcadao-ceu-nublado-6762037/" target="_blank" rel="external">Foto de Rachel Claire no Pexels</a>`
     }
-    else if (iconName == '09d' || iconName == '09n' || iconName == '10d' || iconName == '11n')
+    else if (iconName == '09d' || iconName == '09n' || iconName == '10d' || iconName == '10n')
     {
         document.body.style.backgroundImage = 'url(./images/bg-rain.jpg)'
         author.innerHTML = `<a href="https://www.pexels.com/pt-br/foto/agua-de-orvalho-em-painel-de-vidro-transparente-125510/" target="_blank" rel="external">Foto de Kaique Rocha no Pexels</a>`
@@ -133,32 +189,6 @@ function weatherImage(weather)
     {
         document.body.style.backgroundImage = 'url(./images/bg-fog.jpg)'
         author.innerHTML = `<a href="https://www.pexels.com/pt-br/foto/nebuloso-enevoado-floresta-selva-8647910/" target="_blank" rel="external">Foto de Роман Микрюков no Pexels</a>`
-    }
-}
-
-function changeFahrenheitToCelsius()
-{
-    unit.unitMetric.checked ? api.units = 'metric' : api.units = 'imperial'
-    
-    if (temp.tempUnit.outerText == '°F')
-    {
-        temp.tempUnit.innerHTML = '°C'
-        temp.tempNow.innerHTML = calcFahrenheitToCelsius(temp.tempNow.outerText)
-        temp.tempLow.innerHTML = calcFahrenheitToCelsius(temp.tempLow.outerText)
-        temp.tempHigh.innerHTML = calcFahrenheitToCelsius(temp.tempHigh.outerText)
-    }
-}
-
-function changeCelsiusToFahrenheit()
-{
-    unit.unitMetric.checked ? api.units = 'metric' : api.units = 'imperial'
-
-    if (temp.tempUnit.outerText == '°C')
-    {
-        temp.tempUnit.innerHTML = '°F'
-        temp.tempNow.innerHTML = calcCelsiusToFahrenheit(temp.tempNow.outerText)
-        temp.tempLow.innerHTML = calcCelsiusToFahrenheit(temp.tempLow.outerText)
-        temp.tempHigh.innerHTML = calcCelsiusToFahrenheit(temp.tempHigh.outerText)
     }
 }
 
